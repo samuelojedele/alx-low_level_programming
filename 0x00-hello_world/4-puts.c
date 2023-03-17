@@ -1,10 +1,13 @@
 #include <stdio.h>
 
-/*
- * This is a c program that prints to the standard output
- * with the use of puts()
+/**
+ * main - Entry point
  *
- * The main() returns 0 (success)
+ * Description: 'This is a c program that prints to the standard output
+ * with the use of puts()'
+ *@parameter: 'null'
+ *
+ * Return: Always 0 (Success)
  */
 
 int main(void)
