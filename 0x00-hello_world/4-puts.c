@@ -5,7 +5,6 @@
  *
  * Description: 'This is a c program that prints to the standard output
  * with the use of puts()'
- *@parameter: 'null'
  *
  * Return: Always 0 (Success)
  */
