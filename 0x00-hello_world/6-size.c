@@ -13,14 +13,16 @@ int main(void)
 	/* Datatype declaration */
 	int integerType;
 	float floatType;
-	double doubleType;
+	long int longIntType;
+	long long int longLongIntType;
 	char charType;
 
 	/* Printing the size of Datatypes above */
-	printf("The size of integer is: %lu bytes\n", sizeof(integerType));
-	printf("The size of float is: %lu bytes\n", sizeof(floatType));
-	printf("The size of double is: %lu bytes\n", sizeof(doubleType));
-	printf("The size of char is: %lu bytes\n", sizeof(charType));
+	printf("Size of a char: %lu byte(s)\n", sizeof(charType));
+	printf("Size of an int: %lu byte(s)\n", sizeof(integerType));
+	printf("Size of a long int: %lu byte(s)\n", sizeof(longIntType));
+	printf("Size of a long long int: %lu byte(s)\n", sizeof(longLongIntType));
+	printf("Size of a float: %lu byte(s)\n", sizeof(floatType));
 
 	return (0);
 }
