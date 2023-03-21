@@ -14,8 +14,10 @@ int main(void)
 	/* variable declaration and initialization */
 	char output[8] = "_putchar";
 
+	int i;
+
 	/* looping and print output */
-	for (int i = 0; i < 8; i++)
+	for (i = 0; i < 8; i++)
 	{
 		_putchar(output[i]);
 	}
