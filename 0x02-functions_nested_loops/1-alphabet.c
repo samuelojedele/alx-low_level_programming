@@ -11,8 +11,11 @@ void print_alphabet(void);
 
 void print_alphabet(void)
 {
+	/* variable initialization */
+	char alpb;
+
 	/* looping and printing lowercase alphabets */
-	for (char alpb = 'a'; alpb <= 'z'; alpb++)
+	for (alpb = 'a'; alpb <= 'z'; alpb++)
 	{
 		_putchar(alpb);
 	}
