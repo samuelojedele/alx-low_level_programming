@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_last_digit - prints
@@ -13,7 +13,7 @@
 int print_last_digit(int n)
 {
 	/* variable initialization */
-	int result = n;
+	int result = n % 10;
 
 	/* convert result absolute value */
 	if (result < 0)
@@ -21,10 +21,8 @@ int print_last_digit(int n)
 		result = -result;
 	}
 
-	result %= 10;
-
 	/* printing result */
-	printf("%d", result);
+	_putchar(result + '0');
 
 	return (result);
 }
