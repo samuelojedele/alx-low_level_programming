@@ -13,8 +13,9 @@
 void rev_string(char *s)
 {
 	/* variable declaration and initialization */
-	int n, len = 0, l = 0, i = 0;
+	int len = 0, l = 0;
 	char *temp = s;
+	char temp2;
 
 	/* looping and counting the characters in the string */
 	while (*temp != '\0')
@@ -23,20 +24,12 @@ void rev_string(char *s)
 		temp++;
 	}
 
-	n = --len;
-
-	/* looping through the string in reverse order */
-	while (len >= 0)
+	/* looping and swapping the string */
+	for (; l < len; l++)
 	{
-
-		temp[l] = *(s + len);
+		temp2 = s[len - 1];
+		s[len - 1] = s[l];
+		s[l] = temp2;
 		len--;
-		l++;
-	}
-
-	while (i <= n)
-	{
-		*(s + i) = temp[i];
-		i++;
 	}
 }
