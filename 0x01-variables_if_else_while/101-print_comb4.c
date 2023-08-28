@@ -32,14 +32,14 @@ int main(void)
 				digit3 = k;
 
 				/* calculate permutation index to check for duplicates */
-				perm_index = digit1 * 100 + digit2 * 10 + digit3 ;
+				perm_index = digit1 * 100 + digit2 * 10 + digit3;
 
 				putchar(i + '0');
 				putchar(j + '0');
 				putchar(k + '0');
 
 				/* print separators if needed */
-				if ( perm_index != 789)
+				if (perm_index != 789)
 				{
 					putchar(',');
 					putchar(' ');
