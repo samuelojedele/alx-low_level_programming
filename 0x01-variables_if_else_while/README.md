@@ -18,3 +18,9 @@
 * 8. Write a program that prints all the numbers of base 16 in lowercase, followed by a new line.
 
 * 9. Write a program that prints all possible combinations of single-digit numbers.
+
+* 10. Write a program that prints all possible different combinations of two digits without the repeatition of any of the two digits.
+
+* 11. Write a program that prints all possible different combinations of three digits without the repeatition of any of the the digits.
+
+* 12. Write a program that prints all possible combinations of two two-digit numbers.
