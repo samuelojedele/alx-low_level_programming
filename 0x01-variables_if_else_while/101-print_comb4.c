@@ -15,10 +15,6 @@ int main(void)
 	int i;
 	int j;
 	int k;
-	int digit1;
-	int digit2;
-	int digit3;
-	int perm_index;
 
 	/* print all possible combinations of three digits */
 	for (i = 0; i <= 7; i++)
@@ -27,19 +23,11 @@ int main(void)
 		{
 			for (k = j + 1; k <= 9; k++)
 			{
-				digit1 = i;
-				digit2 = j;
-				digit3 = k;
-
-				/* calculate permutation index to check for duplicates */
-				perm_index = digit1 * 100 + digit2 * 10 + digit3;
-
 				putchar(i + '0');
 				putchar(j + '0');
 				putchar(k + '0');
 
-				/* print separators if needed */
-				if (perm_index != 789)
+				if (i != 7 || j != 8 || k != 9)
 				{
 					putchar(',');
 					putchar(' ');
@@ -48,7 +36,6 @@ int main(void)
 		}
 	}
 
-	/* print new line */
 	putchar('\n');
 
 	return (0);
