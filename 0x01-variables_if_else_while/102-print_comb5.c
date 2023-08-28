@@ -20,7 +20,7 @@ int main(void)
 	/* print all possible combinations of two two-digit numbers */
 	for (i = 0; i <= 98; i++)
 	{
-		for (j = 0; j <= 99; j++)
+		for (j = i; j <= 99; j++)
 		{
 			num1 = i;
 			num2 = j;
