@@ -15,29 +15,46 @@
 
 int main(int argc, char **argv)
 {
+	/* variable declaration */
 	int i;
 	int result = 0;
 
+	/**
+	 * If no number is passed to the program,
+	 * print 0, followed by a new line
+	 */
 	if (argc == 1)
 	{
 		printf("%d\n", result);
 		return (0);
 	}
 
+
 	for (i = 1; i < argc; i++)
 	{
+		/**
+		 * If one of the number contains symbols
+		 * that are not digits, print Error,
+		 * followed by a new line, and return 1
+		 */
 
-		if (!isdigit(argv[i][0]))
+		int j;
+		for(j = 0; j != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+				break;
+			}
 		}
-		else
-		{
-			result += atoi(argv[i]);
-		}
+
+
+		/* Addition of the number */
+		result += atoi(argv[i]);
 	}
 
+	/* print the sum */
 	printf("%d\n", result);
 
 	return (0);
