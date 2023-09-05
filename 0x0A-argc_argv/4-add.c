@@ -19,24 +19,17 @@ int main(int argc, char **argv)
 	int i, j;
 	int result = 0;
 
-	/**
-	 * If no number is passed to the program,
-	 * print 0, followed by a new line
-	 */
+	/* If no number is passed to the program, print 0, followed by a new line. */
 	if (argc == 1)
 	{
 		printf("%d\n", result);
 		return (0);
 	}
 
-	/**
-	 * If one of the number contains symbols
-	 * that are not digits, print Error,
-	 * followed by a new line, and return 1
-	 */
+	/* If one of the number contains symbols that are not digits */
 	for (i = 1; i < argc; i++)
 	{
-		for(j = 0; argv[i][j]; j++)
+		for (j = 0; argv[i][j]; j++)
 		{
 			if (isdigit(argv[i][j]) == 0)
 			{
