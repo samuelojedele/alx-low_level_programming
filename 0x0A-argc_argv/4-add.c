@@ -16,7 +16,7 @@
 int main(int argc, char **argv)
 {
 	/* variable declaration */
-	int i;
+	int i, j;
 	int result = 0;
 
 	/**
@@ -29,28 +29,26 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-
+	/**
+	 * If one of the number contains symbols
+	 * that are not digits, print Error,
+	 * followed by a new line, and return 1
+	 */
 	for (i = 1; i < argc; i++)
 	{
-		/**
-		 * If one of the number contains symbols
-		 * that are not digits, print Error,
-		 * followed by a new line, and return 1
-		 */
-
-		int j;
-		for(j = 0; j != '\0'; j++)
+		for(j = 0; argv[i][j]; j++)
 		{
-			if (!isdigit(argv[i][j]))
+			if (isdigit(argv[i][j]) == 0)
 			{
 				printf("Error\n");
 				return (1);
-				break;
 			}
 		}
+	}
 
-
-		/* Addition of the number */
+	/* calculate the sum */
+	for (i = 1; i < argc; i++)
+	{
 		result += atoi(argv[i]);
 	}
 
