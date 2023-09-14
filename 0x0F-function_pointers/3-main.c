@@ -1,5 +1,5 @@
 #include "3-calc.h"
-
+#include <string.h>
 /**
  * main - Entry Point
  * @argc: number of arguments
@@ -9,10 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int (*operation_func)(int, int);
 	int result;
-
-	operation_func = get_op_func(argv[2]);
 
 	if (argc != 4)
 	{
@@ -20,29 +17,27 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (operation_func == NULL)
+	if (
+		strcmp(argv[2], "+") &&
+		strcmp(argv[2], "-") &&
+		strcmp(argv[2], "*") &&
+		strcmp(argv[2], "/") &&
+		strcmp(argv[2], "%")
+	)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	else if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
+
+	if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	else
-	{
 
-		if (operation_func != NULL)
-		{
-			result = operation_func(atoi(argv[1]), atoi(argv[3]));
 
-			printf("%d\n", result);
-		}
-		else
-			printf("Operation not found or invalid.\n");
-
-	}
+	result = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
+	printf("%d\n", result);
 
 	return (0);
 }
