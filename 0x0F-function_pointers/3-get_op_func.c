@@ -11,22 +11,23 @@
  */
 int (*get_op_func(char *s))(int a, int b)
 {
-	op_t operation;
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
 
-	while (*s >= '%' && *s <= '/')
+	int i = 0;
+
+	while (ops[i].op != NULL)
 	{
-		if (*s == '+')
-			return (operation.f = op_add);
-		else if (*s == '-')
-			return (operation.f = op_sub);
-		else if (*s == '*')
-			return (operation.f = op_mul);
-		else if (*s == '/')
-			return (operation.f = op_div);
-		else if (*s == '%')
-			return (operation.f = op_mod);
+		if (!strcmp(ops[i].op, s))
+			return (ops[i].f);
 
-		s++;
+		i++;
 	}
 
 	return (NULL);
