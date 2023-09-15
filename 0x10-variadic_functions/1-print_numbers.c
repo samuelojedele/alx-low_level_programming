@@ -15,9 +15,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list args;
 
-	if (separator == NULL || *separator == '\0' || n == 0)
+	if (separator == NULL || *separator == '\0')
 		return;
 
+	if (n == 0)
+		printf("\n");
 
 	va_start(args, n);
 
