@@ -15,23 +15,29 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list args;
 
-	if (separator == NULL || *separator == '\0')
-		return;
-
 	if (n == 0)
-		printf("\n");
+		return;
 
 	va_start(args, n);
 
-	for (i = 0; i < n; i++)
+	if (separator == NULL || *separator == '\0')
 	{
 		printf("%d", va_arg(args, int));
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
+		{
+			printf("%d", va_arg(args, int));
 
-		if (i == (n - 1))
-			printf("\n");
-		else
+			if (i == (n - 1))
+				break;
+
 			printf("%s", separator);
+		}
 	}
 
 	va_end(args);
+
+	printf("\n");
 }
